@@ -1,0 +1,26 @@
+/**
+ * clearfix
+ * http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning/
+ * :before :after pseudo-ements
+ * creates hidden elements above and below the parent containing the floats;
+ *
+ * The :before pseudo-element is used to prevent the top margin of child
+ * elements from collapsing by creating an anonymous table-cell element using
+ * the display: table; declaration
+ *
+ * The :after pseudo-element is used to prevent the bottom margin of child
+ * elements from collapsing, as well as to clear the nested floats.
+ *
+ * Adding the *zoom property to the parent element triggers the hasLayout mechanism
+ */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
